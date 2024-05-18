@@ -5,6 +5,9 @@
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
+      <a-assets>
+        <a-asset-item id="cityModel" src="ujrakezdo.glb"></a-asset-item>
+      </a-assets>
       <a-marker preset="hiro">
         <!-- we use cors proxy to avoid cross-origin problems -->
         <!--
@@ -14,9 +17,7 @@
          
         -->
         
-        <a-assets>
-          <a-asset-item id="cityModel" src="ujrakezdo.glb"></a-asset-item>
-        </a-assets>
+        
 
         <a-entity gltf-model="#cityModel" modify-materials></a-entity>
 
