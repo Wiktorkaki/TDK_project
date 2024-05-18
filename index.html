@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
   <!-- we import arjs version without NFT but with marker + location based support -->
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <body style="margin : 0px; overflow: hidden;">
@@ -8,27 +8,39 @@
       <a-marker preset="hiro">
         <!-- we use cors proxy to avoid cross-origin problems -->
         <!--
-          ⚠️⚠️⚠️
+          
           https://arjs-cors-proxy.herokuapp.com/ is now offline, Heroku has dismissed all his free plans from November 2022.
           You need to host your own proxy and use it instead. The proxy is based on CORS Anywhere (see https://github.com/Rob--W/cors-anywhere).
-          ⚠️⚠️⚠️
+         
         -->
         
-        <a-box positoin="0 0.5 0" material="color: green;">
-            <a-animation attribute="rotation"
-            dur="3000"
-            to="360 360 0"
-            repeat="indefinite"
-            easing="linear">
-        </a-animation>
-        </a-box>
-        <!--
-        <a-entity
+        <a-assets>
+          <a-asset-item id="cityModel" src="ujrakezdo.glb"></a-asset-item>
+        </a-assets>
+
+        <a-entity gltf-model="#cityModel" modify-materials></a-entity>
+
+        <!-- <a-sphere position="0 0 1" radius="0.5" color="#EF2D5E"></a-sphere>
+        <a-cylinder position="0 0.75 0" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder> -->
+        <!-- <a-box positoin="0 0 0" material="color: green;">
+            
+        </a-box> -->
+
+        <!-- <a-assets>
+          <a-asset-item 
+          id="#mukodjel"
+          src="model/yellow_plaster_4k.gltf"
+          >
+          </a-asset-item>
+        </a-assets> -->
+
+        
+        <!-- <a-entity
           position="0 0 0"
           scale="0.05 0.05 0.05"
-          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-        ></a-entity>
-        -->
+          gltf-model="model/yellow_plaster_4k.gltf"
+        ></a-entity> -->
+       
         
         
       </a-marker>
